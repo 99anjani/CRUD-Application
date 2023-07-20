@@ -16,6 +16,7 @@ const CRUD = () => {
   const [age,setAge] = useState('');
   const [isActive,setIsActive] = useState(0);
 
+  const [editId,setEditId] = useState('');
   const [editName,setEditName] = useState('');
   const [editAge,setEditAge] = useState('');
   const [editIsActive,setEditIsActive] = useState(0);
@@ -83,7 +84,7 @@ const CRUD = () => {
             <Col>
               <input type="checkbox" 
               checked={isActive === 1? true : false}
-              onChange={(e)=>setIsActive(e) }
+              onChange={(e)=>handleEdit(e) }
               value={isActive}
               />
               <label>IsActive</label>
@@ -168,10 +169,7 @@ const CRUD = () => {
               />
               <label>IsActive</label>
             </Col>
-
-            <Col>
-              <button className="btn btn-primary">Update</button>
-            </Col>
+ 
           </Row>
         </Modal.Body>
         <Modal.Footer>
